@@ -1,16 +1,21 @@
 package com.example.weeklytaskdb1.model;
 
-public class Fruit {
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+public class Fruit {
+    @Id
+    @GeneratedValue
     private int id;
+
     private String name;
     private String description;
     private String category;
     private String origin;
     private String color;
 
-    public Fruit(int id, String name, String description, String category, String origin, String color) {
-        this.id = id;
+    private Fruit(String name, String description, String category, String origin, String color) {
         this.name = name;
         this.description = description;
         this.category = category;
@@ -65,5 +70,4 @@ public class Fruit {
     public void setColor(String color) {
         this.color = color;
     }
-
 }
