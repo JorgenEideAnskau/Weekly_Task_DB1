@@ -1,9 +1,13 @@
 package com.example.weeklytaskdb1.model;
 
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity
+@Table(name = "fruits")
 public class Fruit {
     @Id
     @GeneratedValue
@@ -15,12 +19,16 @@ public class Fruit {
     private String origin;
     private String color;
 
-    private Fruit(String name, String description, String category, String origin, String color) {
+    public Fruit(String name, String description, String category, String origin, String color) {
         this.name = name;
         this.description = description;
         this.category = category;
         this.origin = origin;
         this.color = color;
+    }
+
+    public Fruit() {
+
     }
 
     public int getId() {
