@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "fruits")
-public class Fruit {
+public class Fruit implements thing {
     @Id
     @GeneratedValue
     private int id;

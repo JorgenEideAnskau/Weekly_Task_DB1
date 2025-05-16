@@ -1,18 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('/fruits')
-        .then(response => response.json())
-        .then(data => {
-            const tbody = document.querySelector('tbody');
-            tbody.innerHTML = '';
-            data.forEach((item, index) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-            <th scope=\"row\">${index}</th>
-            <td>${item.name}</td>
-            <td>${item.description}</td>
-          `
-                index++;
-                tbody.appendChild(row);
-            });
-        });
+import {initFruitTable} from "./fruitTable.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+    const tbody = document.querySelector('tbody');
+    initFruitTable(tbody);
+});
+
+
+// Create button toggles the create new fruit form
+document.getElementById('toggle-button').addEventListener('click', () => {
+    const box = document.getElementById('until-found-box');
+    box.hidden = !box.hidden;
 });
